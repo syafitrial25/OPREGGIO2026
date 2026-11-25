@@ -1,703 +1,1403 @@
 <!DOCTYPE html>
-<html lang="en" style="scroll-behavior:smooth; scroll-padding-top:85px">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#780000">
-<meta name="description" content="KSPM FEB UPNVJ - Capital Market Community">
+<meta name="description" content="Kelompok Studi Pasar Modal FEB UPN Veteran Jakarta. Beyond The Market. Building The Future.">
 <title>KSPM FEB UPNVJ | Capital Market Community</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<style>:root {}
-.btn:hover {transform:translatey(-4px)}
-.btn-light:hover {}
-.btn-red:hover {}
-.nav-links a:hover {}
-.hero::before {content:"KSPM";position:absolute;right:-35px;bottom:-90px;font-size:clamp(180px, 30vw, 420px);font-weight:800;line-height:1;color:rgba(255, 255, 255, 0.035);pointer-events:none}
-.about::after {content:"KSPM";position:absolute;right:-20px;bottom:-75px;font-size:230px;font-weight:800;color:rgba(255, 255, 255, 0.035);pointer-events:none}
-.program-card:hover {transform:translatey(-8px)}
-.department-card:hover {transform:translatey(-7px)}
-.contact-item a:hover {text-decoration:underline}
-.footer-social a:hover {}
-@media (max-width: 900px) {
-    .nav-links {
-        gap: 15px
-        }
-    .nav-links a {
-        font-size: 10px
-        }
-    .hero-content, .about-grid {
-        gap: 30px
-        }
-    .program-grid, .department-grid {
-        grid-template-columns: repeat(2, 1fr)
-        }
-    }
-@media (max-width: 700px) {
-    .section-padding {
-        padding: 80px 0
-        }
-    .nav-container {
-        min-height: 72px
-        }
-    .menu-toggle {
-        display: block
-        }
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 72px;
-        left: 0;
-        width: 100%;
-        padding: 25px 5%;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 25px
-        }
-    .nav-links.show {
-        display: flex
-        }
-    .nav-links a {
-        font-size: 12px
-        }
-    .hero {
-        padding: 135px 0 110px;
-        min-height: auto
-        }
-    .hero-content, .about-grid, .contact-grid {
-        grid-template-columns: 1fr
-        }
-    .hero-content {
-        text-align: center
-        }
-    .home-description {
-        margin-left: auto;
-        margin-right: auto
-        }
-    .button-group {
-        justify-content: center
-        }
-    .hero-logo {
-        width: 220px;
-        margin-top: 25px
-        }
-    .values-strip {
-        position: relative;
-        margin-top: 60px;
-        margin-bottom: -110px;
-        gap: 15px
-        }
-    .values-strip span {
-        font-size: 8px
-        }
-    .about-visual {
-        min-height: 290px
-        }
-    .about-points {
-        grid-template-columns: 1fr 1fr
-        }
-    .program-grid, .department-grid {
-        grid-template-columns: 1fr
-        }
-    .contact-grid {
-        gap: 30px
-        }
-    .footer {
-        flex-direction: column;
-        align-items: flex-start
-        }
-    }
-@media (max-width: 420px) {
-    .brand-name {
-        font-size: 12px
-        }
-    .brand-tagline {
-        font-size: 7px
-        }
-    .brand img {
-        width: 42px;
-        height: 42px
-        }
-    .hero h1 {
-        font-size: 43px
-        }
-    .about-points {
-        grid-template-columns: 1fr
-        }
-    .contact-box {
-        padding: 25px
-        }
-    .section-title {
-        font-size: 39px
-        }
-    }
-@media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-        scroll-behavior: auto;
-        animation-duration: 0.01ms;
-        transition-duration: 0.01ms
-        }
-    }</style>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* =========================
+   COLOR PALETTE
+========================= */
+:root {
+  --red: #780000;
+  --dark-red: #3b0000;
+  --bright-red: #c1121f;
+  --grey-blue: #a8b5bd;
+  --white: #ffffff;
+  --light-grey: #e3e8eb;
+  --cream: #fff1d5;
+  --text: #252525;
+}
+
+/* =========================
+   GENERAL
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text);
+  overflow-x: hidden;
+  background: var(--white);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: min(1160px, 90%);
+  margin: auto;
+}
+
+.section-padding {
+  padding: 100px 0;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 11px;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 5vw, 58px);
+  line-height: 1.15;
+  margin-bottom: 22px;
+}
+
+.section-description {
+  max-width: 650px;
+  line-height: 1.9;
+  font-size: 15px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 25px;
+  border: 1px solid transparent;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 13px;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--red);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--bright-red);
+  transform: translateY(-3px);
+}
+
+.btn-light {
+  background: white;
+  color: var(--red);
+}
+
+.btn-light:hover {
+  background: var(--cream);
+  transform: translateY(-3px);
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(59, 0, 0, .96);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
+
+.nav-content {
+  min-height: 82px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+}
+
+.brand img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  background: white;
+  border-radius: 50%;
+  padding: 3px;
+}
+
+.brand-text strong {
+  display: block;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+.brand-text span {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--cream);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: white;
+  text-transform: uppercase;
+  transition: .3s;
+}
+
+.nav-links a:hover {
+  color: var(--cream);
+}
+
+.nav-cta {
+  background: var(--cream);
+  color: var(--dark-red) !important;
+  padding: 12px 18px;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+  min-height: 100vh;
+  padding: 150px 0 110px;
+  background:
+    radial-gradient(circle at 85% 35%, rgba(193,18,31,.38), transparent 30%),
+    linear-gradient(125deg, #3b0000, #780000 65%, #570000);
+  color: white;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 50%;
+  right: -150px;
+  bottom: -180px;
+  box-shadow:
+    0 0 0 50px rgba(255,255,255,.025),
+    0 0 0 100px rgba(255,255,255,.02);
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  align-items: center;
+  gap: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-label {
+  display: inline-block;
+  color: var(--cream);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(46px, 5.8vw, 76px);
+  line-height: 1.08;
+  margin-bottom: 25px;
+}
+
+.hero h1 span {
+  color: var(--cream);
+  display: block;
+}
+
+.hero-description {
+  font-size: 15px;
+  line-height: 1.9;
+  max-width: 560px;
+  color: rgba(255,255,255,.82);
+  margin-bottom: 35px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero-logo {
+  width: min(330px, 80%);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: white;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 25px 80px rgba(0,0,0,.35);
+  animation: floating 4s ease-in-out infinite;
+}
+
+.hero-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.hero-circle {
+  position: absolute;
+  width: 390px;
+  height: 390px;
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 50%;
+}
+
+.values-strip {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--cream);
+  color: var(--dark-red);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 5%;
+  flex-wrap: wrap;
+  z-index: 3;
+}
+
+.values-strip span {
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  font-weight: 800;
+  text-align: center;
+}
+
+@keyframes floating {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* =========================
+   ABOUT US
+========================= */
+.about {
+  background: var(--red);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.about::after {
+  content: "KSPM";
+  position: absolute;
+  right: -30px;
+  bottom: -70px;
+  font-size: 230px;
+  font-weight: 800;
+  color: rgba(255,255,255,.035);
+  pointer-events: none;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 75px;
+  position: relative;
+  z-index: 1;
+}
+
+.about .eyebrow {
+  color: var(--cream);
+}
+
+.about .section-title {
+  color: white;
+}
+
+.about .section-description {
+  color: rgba(255,255,255,.85);
+  margin-bottom: 25px;
+}
+
+.about-visual {
+  min-height: 390px;
+  background:
+    linear-gradient(145deg, rgba(59,0,0,.3), rgba(120,0,0,.8)),
+    repeating-linear-gradient(
+      135deg,
+      #c1121f 0px,
+      #c1121f 2px,
+      #780000 2px,
+      #780000 30px
+    );
+  border: 1px solid rgba(255,255,255,.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 45px;
+  position: relative;
+}
+
+.about-logo {
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background: white;
+  padding: 15px;
+  display: grid;
+  place-items: center;
+}
+
+.about-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.about-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: white;
+  font-weight: 700;
+}
+
+/* =========================
+   FOUNDATION / VALUES
+========================= */
+.vision {
+  background: var(--cream);
+}
+
+.vision-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin-top: 45px;
+}
+
+.vision-card {
+  padding: 40px;
+  background: white;
+  border-top: 5px solid var(--red);
+  box-shadow: 0 10px 35px rgba(59,0,0,.07);
+}
+
+.vision-card .number {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  color: var(--bright-red);
+  margin-bottom: 15px;
+}
+
+.vision-card h3 {
+  font-size: 22px;
+  color: var(--dark-red);
+  margin-bottom: 14px;
+}
+
+.vision-card p {
+  line-height: 1.9;
+  font-size: 14px;
+  color: #555;
+}
+
+/* =========================
+   PROGRAMS
+========================= */
+.programs {
+  background: var(--dark-red);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.programs .eyebrow {
+  color: var(--cream);
+}
+
+.programs .section-title {
+  color: white;
+}
+
+.programs .section-description {
+  color: rgba(255,255,255,.8);
+}
+
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 50px;
+}
+
+.program-card {
+  padding: 32px;
+  border: 1px solid rgba(255,255,255,.2);
+  background: rgba(255,255,255,.06);
+  transition: .35s;
+  min-height: 270px;
+  display: flex;
+  flex-direction: column;
+}
+
+.program-card:hover {
+  background: var(--red);
+  transform: translateY(-8px);
+  border-color: var(--cream);
+}
+
+.program-tag {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--cream);
+  margin-bottom: 22px;
+  text-transform: uppercase;
+}
+
+.program-card h3 {
+  color: white;
+  font-family: 'Playfair Display', serif;
+  font-size: 23px;
+  margin-bottom: 14px;
+}
+
+.program-card p {
+  color: rgba(255,255,255,.78);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* =========================
+   DEPARTMENTS
+========================= */
+.events {
+  background: var(--light-grey);
+}
+
+.events-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 20px;
+  margin-bottom: 45px;
+}
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.event-card {
+  background: white;
+  overflow: hidden;
+  transition: .3s;
+  box-shadow: 0 8px 30px rgba(0,0,0,.06);
+  display: flex;
+  flex-direction: column;
+}
+
+.event-card:hover {
+  transform: translateY(-8px);
+}
+
+.event-image {
+  height: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--red), var(--dark-red));
+  color: white;
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  text-align: center;
+  padding: 25px;
+}
+
+.event-body {
+  padding: 25px;
+}
+
+.event-tag {
+  color: var(--bright-red);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.event-body h3 {
+  color: var(--dark-red);
+  margin-top: 10px;
+  font-size: 21px;
+}
+
+/* =========================
+   CALL TO ACTION
+========================= */
+.cta {
+  padding: 95px 0;
+  background: var(--red);
+  color: white;
+  text-align: center;
+}
+
+.cta .eyebrow {
+  color: var(--cream);
+}
+
+.cta h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(35px, 5vw, 55px);
+  margin-bottom: 20px;
+}
+
+.cta p {
+  color: rgba(255,255,255,.85);
+  margin: 0 auto 30px;
+  max-width: 600px;
+  line-height: 1.8;
+}
+
+/* =========================
+   CONTACT
+========================= */
+.contact {
+  background: var(--cream);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 0.65fr;
+  gap: 50px;
+  margin-top: 40px;
+  align-items: start;
+}
+
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.contact-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.contact-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--red);
+  color: white;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.contact-item h4 {
+  color: var(--dark-red);
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+
+.contact-item a,
+.contact-item p {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.8;
+  font-weight: 600;
+}
+
+.contact-item a:hover {
+  color: var(--bright-red);
+  text-decoration: underline;
+}
+
+.contact-panel {
+  background: var(--dark-red);
+  color: white;
+  padding: 40px;
+}
+
+.contact-panel h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.contact-panel p {
+  color: rgba(255,255,255,.78);
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  background: #210000;
+  color: white;
+  padding: 35px 0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-brand img {
+  width: 42px;
+  height: 42px;
+  background: white;
+  border-radius: 50%;
+  padding: 3px;
+  object-fit: contain;
+}
+
+.footer-brand strong {
+  font-size: 14px;
+}
+
+.footer-brand p,
+.footer-copy {
+  font-size: 11px;
+  color: rgba(255,255,255,.6);
+  margin-top: 5px;
+  letter-spacing: 1px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 20px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.footer-social a:hover {
+  color: var(--cream);
+}
+
+/* =========================
+   ANIMATION
+========================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media(max-width: 900px) {
+  .nav-links {
+    gap: 17px;
+  }
+
+  .hero-content,
+  .about-grid,
+  .contact-grid {
+    gap: 35px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .program-grid,
+  .event-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width: 700px) {
+  .section-padding {
+    padding: 75px 0;
+  }
+
+  .nav-content {
+    min-height: 70px;
+  }
+
+  .brand img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: var(--dark-red);
+    padding: 25px 5%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 130px 0 95px;
+  }
+
+  .hero-content,
+  .about-grid,
+  .vision-grid,
+  .contact-info {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-visual {
+    margin-top: 30px;
+  }
+
+  .hero-logo {
+    width: 230px;
+  }
+
+  .hero-circle {
+    width: 280px;
+    height: 280px;
+  }
+
+  .about-visual {
+    min-height: 300px;
+  }
+
+  .program-grid,
+  .event-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .events-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-panel {
+    padding: 30px;
+  }
+}
+</style>
 </head>
 
-<body style="overflow-x:hidden">
+<body>
 
-<!-- =================================
-     NAVIGATION
-================================= -->
-<header class="navbar" style="backdrop-filter:blur(15px); background:rgba(59, 0, 0, 0.96); border-bottom:1px solid rgba(255, 255, 255, 0.15); left:0; position:fixed; top:0; width:100%; z-index:1000" width="100%">
-  <div class="nav-container" style="align-items:center; display:flex; gap:25px; justify-content:space-between; margin:auto; min-height:82px; width:min(1150px, 90%)" width="min(1150px, 90%)">
+<!-- NAVIGATION -->
+<header class="navbar">
+  <div class="container nav-content">
 
-    <a href="#home" class="brand" style="color:white; text-decoration:none; align-items:center; display:flex; flex-shrink:0; gap:12px">
-      <img src="assets/logo-kspm.png" alt="Logo KSPM FEB UPNVJ" style="display:block; max-width:100%; background:white; border-radius:50%; height:48px; object-fit:contain; padding:3px; width:48px" height="48" width="48">
-
-      <div>
-        <div class="brand-name" style="font-size:14px; font-weight:800; letter-spacing:0.5px">KSPM FEB UPNVJ</div>
-        <span class="brand-tagline" style="display:block; font-size:8px; letter-spacing:2px; margin-top:4px">CAPITAL MARKET COMMUNITY</span>
+    <a href="#home" class="brand">
+      <img src="assets/logo-kspm.png" alt="KSPM Logo">
+      <div class="brand-text">
+        <strong>KSPM FEB UPNVJ</strong>
+        <span>CAPITAL MARKET COMMUNITY</span>
       </div>
     </a>
 
-    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" style="font-family:inherit; background:transparent; border:1px solid white; color:white; cursor:pointer; display:none; font-size:22px; padding:6px 12px">
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
       ☰
     </button>
 
-    <nav class="nav-links" id="navLinks" style="align-items:center; display:flex; gap:25px">
-      <a href="#home" style="color:white; text-decoration:none; font-size:11px; font-weight:700; transition:0.3s">Home</a>
-      <a href="#about" style="color:white; text-decoration:none; font-size:11px; font-weight:700; transition:0.3s">About</a>
-      <a href="#programs" style="color:white; text-decoration:none; font-size:11px; font-weight:700; transition:0.3s">Programs</a>
-      <a href="#departments" style="color:white; text-decoration:none; font-size:11px; font-weight:700; transition:0.3s">Departments</a>
-      <a href="#weekly-report" style="color:white; text-decoration:none; font-size:11px; font-weight:700; transition:0.3s">Weekly Report</a>
-      <a href="#contact" class="contact-link" style="color:white; text-decoration:none; font-size:11px; font-weight:700; transition:0.3s; padding:12px 17px">Contact Us ↗</a>
-    </nav>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#programs">Programs</a></li>
+      <li><a href="#departments">Departments</a></li>
+      <li><a href="#contact" class="nav-cta">Contact Us ↗</a></li>
+    </ul>
 
   </div>
 </header>
 
 <main>
 
-<!-- =================================
-     HOME
-================================= -->
-<section id="home" class="hero" style="align-items:center; color:white; display:flex; min-height:100vh; overflow:hidden; padding:155px 0 100px; position:relative">
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container hero-content">
 
-  <div class="container hero-content" style="margin:auto; width:min(1100px, 90%); align-items:center; display:grid; gap:55px; grid-template-columns:1.2fr 0.8fr; position:relative; z-index:2" width="min(1100px, 90%)">
+    <div class="reveal">
+      <span class="hero-label">FEB UPN “VETERAN” JAKARTA</span>
 
-    <div class="reveal" style="opacity:0; transform:translatey(30px); transition:opacity 0.8s ease, transform 0.8s ease">
-
-      <div class="eyebrow" style="font-size:11px; font-weight:800; letter-spacing:3px; margin-bottom:20px; text-transform:uppercase">
-        Welcome to KSPM FEB UPNVJ
-      </div>
-
-      <h1 style="font-size:clamp(45px, 6vw, 76px); line-height:1.08; margin-bottom:25px">
-        A Space to Learn.<br>
-        A Community to <span>Grow.</span>
+      <h1>
+        Beyond The Market.
+        <span>Building The Future.</span>
       </h1>
 
-      <p class="home-description" style="color:rgba(255, 255, 255, 0.85); font-size:14px; line-height:1.95; margin-bottom:32px; max-width:590px">
-        Kelompok Studi Pasar Modal FEB UPN "Veteran" Jakarta is a
-        student organization dedicated to expanding capital market
-        knowledge, encouraging collaboration, and developing students'
-        potential through meaningful experiences.
+      <p class="hero-description">
+        More than a student organization, KSPM FEB UPNVJ is a community
+        to explore the capital market, develop financial knowledge,
+        and create opportunities for future leaders.
       </p>
 
-      <div class="button-group" style="display:flex; flex-wrap:wrap; gap:13px">
-
-        <a href="#about" class="btn btn-light" style="color:inherit; text-decoration:none; align-items:center; background:transparent; border:1px solid currentColor; border-radius:3px; cursor:pointer; display:inline-flex; font-size:12px; font-weight:800; justify-content:center; letter-spacing:0.5px; padding:15px 23px; transition:0.3s">
+      <div class="hero-buttons">
+        <a href="#about" class="btn btn-light">
           Discover KSPM ↗
         </a>
 
-        <a href="#programs" class="btn" style="color:inherit; text-decoration:none; align-items:center; background:transparent; border:1px solid currentColor; border-radius:3px; cursor:pointer; display:inline-flex; font-size:12px; font-weight:800; justify-content:center; letter-spacing:0.5px; padding:15px 23px; transition:0.3s">
+        <a href="#programs" class="btn btn-primary"
+           style="border-color:white">
           Explore Programs
         </a>
-
       </div>
-
     </div>
 
-    <div class="hero-logo reveal" style="align-items:center; animation:floating 4s ease-in-out infinite; aspect-ratio:1; background:white; border-radius:50%; box-shadow:0 25px 70px rgba(0, 0, 0, 0.3); display:flex; justify-content:center; margin:auto; padding:22px; width:min(320px, 85%); opacity:0; transform:translatey(30px); transition:opacity 0.8s ease, transform 0.8s ease" width="min(320px, 85%)">
-      <img src="assets/logo-kspm.png" alt="KSPM Logo" style="display:block; max-width:100%; height:100%; object-fit:contain; width:100%" height="100%" width="100%">
+    <div class="hero-visual reveal">
+      <div class="hero-circle"></div>
+      <div class="hero-logo">
+        <img src="assets/logo-kspm.png" alt="KSPM FEB UPNVJ">
+      </div>
     </div>
 
   </div>
 
-  <div class="values-strip" style="bottom:0; display:flex; flex-wrap:wrap; gap:15px; justify-content:space-evenly; left:0; padding:19px 5%; position:absolute; width:100%" width="100%">
-    <span style="font-size:10px; font-weight:800; letter-spacing:2px; text-align:center" align="center">CAPITAL MARKET EDUCATION</span>
-    <span style="font-size:10px; font-weight:800; letter-spacing:2px; text-align:center" align="center">FINANCIAL LITERACY</span>
-    <span style="font-size:10px; font-weight:800; letter-spacing:2px; text-align:center" align="center">COLLABORATION</span>
-    <span style="font-size:10px; font-weight:800; letter-spacing:2px; text-align:center" align="center">EXCELLENCE</span>
+  <div class="values-strip">
+    <span>CAPITAL MARKET EDUCATION</span>
+    <span>FINANCIAL LITERACY</span>
+    <span>COLLABORATION</span>
+    <span>EXCELLENCE</span>
   </div>
-
 </section>
 
-<!-- =================================
-     ABOUT
-================================= -->
-<section id="about" class="about section-padding" style="padding:105px 0; overflow:hidden; position:relative">
+<!-- 01 / ABOUT US -->
+<section class="about section-padding" id="about">
+  <div class="container about-grid">
 
-  <div class="container about-grid" style="margin:auto; width:min(1100px, 90%); align-items:center; display:grid; gap:65px; grid-template-columns:1.1fr 0.9fr; position:relative; z-index:1" width="min(1100px, 90%)">
+    <div class="reveal">
+      <p class="eyebrow">01 / ABOUT US</p>
 
-    <div class="reveal" style="opacity:0; transform:translatey(30px); transition:opacity 0.8s ease, transform 0.8s ease">
-
-      <div class="eyebrow" style="font-size:11px; font-weight:800; letter-spacing:3px; margin-bottom:20px; text-transform:uppercase">
-        Who We Are
-      </div>
-
-      <h2 class="section-title" style="font-size:clamp(40px, 5vw, 65px); line-height:1.12; margin-bottom:22px; color:white">
-        About<br>Our Community.
+      <h2 class="section-title">
+        A Space to Learn. A Community to Grow.
       </h2>
 
-      <p class="section-description" style="font-size:14px; line-height:1.95; max-width:650px; color:rgba(255, 255, 255, 0.87)">
-        KSPM FEB UPNVJ is a student community that focuses on capital
-        market education and financial literacy. We provide a space
-        for students to learn, explore, and develop their understanding
-        of the investment world.
-        <br><br>
-        Through education, collaboration, and various activities,
-        we aim to create a generation that is knowledgeable,
-        responsible, and ready to face the future of finance.
+      <p class="section-description">
+        Kelompok Studi Pasar Modal FEB UPN “Veteran” Jakarta is a student
+        organization dedicated to expanding capital market knowledge,
+        encouraging collaboration, and developing students’ potential
+        through meaningful experiences.
       </p>
 
-      <div class="about-points" style="display:grid; gap:20px; grid-template-columns:1fr 1fr; margin-top:35px">
+      <p class="section-description">
+        We believe knowledge creates opportunities. Through education,
+        experience, and collaboration, every member can discover their
+        potential and take part in the dynamic world of capital markets.
+      </p>
 
-        <div class="about-point" style="border-top:1px solid rgba(255, 255, 255, 0.5); padding-top:18px">
-          <h3 style="color:white; font-size:16px; margin-bottom:10px">Our Vision</h3>
-          <p style="color:rgba(255, 255, 255, 0.8); font-size:12px; line-height:1.8">
-            To become a community that inspires financial literacy
-            and capital market excellence.
-          </p>
+      <a href="#foundation" class="btn btn-light">
+        OUR FOUNDATION →
+      </a>
+    </div>
+
+    <div class="about-visual reveal">
+      <div class="about-logo">
+        <img src="assets/logo-kspm.png" alt="KSPM Logo">
+      </div>
+      <div class="about-caption">
+        KSPM. · LEARN · CONNECT · GROW
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 02 / OUR FOUNDATION -->
+<section class="vision section-padding" id="foundation">
+  <div class="container">
+
+    <div class="reveal">
+      <p class="eyebrow" style="color:#780000">02 / OUR FOUNDATION</p>
+      <h2 class="section-title" style="color:#3b0000">
+        The Values Behind Everything We Do.
+      </h2>
+      <p class="section-description" style="color:#555">
+        Four pillars that shape our culture, strengthen our community,
+        and guide every step of our journey.
+      </p>
+    </div>
+
+    <div class="vision-grid">
+
+      <div class="vision-card reveal">
+        <div class="number">01 —</div>
+        <h3>Wellbeing</h3>
+        <p>
+          Creating a supportive environment where every member feels
+          valued, connected, and empowered to grow.
+        </p>
+      </div>
+
+      <div class="vision-card reveal">
+        <div class="number">02 —</div>
+        <h3>Education</h3>
+        <p>
+          Building knowledge, developing skills, and encouraging
+          continuous learning.
+        </p>
+      </div>
+
+      <div class="vision-card reveal">
+        <div class="number">03 —</div>
+        <h3>Collaboration</h3>
+        <p>
+          Growing together through teamwork, communication, and
+          shared experiences.
+        </p>
+      </div>
+
+      <div class="vision-card reveal">
+        <div class="number">04 —</div>
+        <h3>Competition</h3>
+        <p>
+          Challenging ourselves to achieve excellence and bring our
+          capabilities further.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 03 / OUR PROGRAMS -->
+<section class="programs section-padding" id="programs">
+  <div class="container">
+
+    <div class="reveal">
+      <p class="eyebrow">03 / OUR PROGRAMS</p>
+
+      <h2 class="section-title">
+        Turning Knowledge Into Experience.
+      </h2>
+
+      <p class="section-description">
+        Explore initiatives and experiences designed to develop
+        our members’ potential.
+      </p>
+    </div>
+
+    <div class="program-grid">
+
+      <article class="program-card reveal">
+        <div class="program-tag">01 / CAREER ↗</div>
+        <h3>Finance Pathway</h3>
+        <p>
+          Discover career opportunities and gain insights from
+          professionals in the finance industry.
+        </p>
+      </article>
+
+      <article class="program-card reveal">
+        <div class="program-tag">02 / EXPERIENCE ↗</div>
+        <h3>Visit Emiten</h3>
+        <p>
+          Explore the business environment and understand how
+          listed companies operate.
+        </p>
+      </article>
+
+      <article class="program-card reveal">
+        <div class="program-tag">03 / NETWORKING ↗</div>
+        <h3>Studi Banding</h3>
+        <p>
+          Exchange ideas and organizational insights with other
+          student communities.
+        </p>
+      </article>
+
+      <article class="program-card reveal">
+        <div class="program-tag">04 / EDUCATION ↗</div>
+        <h3>SPM+</h3>
+        <p>
+          Develop practical capital market knowledge through
+          research, modelling, and valuation.
+        </p>
+      </article>
+
+      <article class="program-card reveal">
+        <div class="program-tag">05 / COMPETITION ↗</div>
+        <h3>Vetra Stock Competition</h3>
+        <p>
+          Challenge analytical and trading skills in a capital
+          market competition.
+        </p>
+      </article>
+
+      <article class="program-card reveal">
+        <div class="program-tag">06 / INSIGHTS ↗</div>
+        <h3>Grand Investment Outlook</h3>
+        <p>
+          Explore economic developments and investment perspectives
+          with industry practitioners.
+        </p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- 04 / OUR ORGANIZATION (DEPARTMENTS) -->
+<section class="events section-padding" id="departments">
+  <div class="container">
+
+    <div class="events-heading reveal">
+      <div>
+        <p class="eyebrow" style="color:#780000">04 / OUR ORGANIZATION</p>
+        <h2 class="section-title" style="color:#3b0000">
+          Different Roles. One Shared Purpose.
+        </h2>
+        <p class="section-description" style="color:#555">
+          Meet the departments that work together to make every
+          KSPM initiative possible.
+        </p>
+      </div>
+    </div>
+
+    <div class="event-grid">
+
+      <article class="event-card reveal">
+        <div class="event-image">
+          FINANCE &<br>ADMINISTRATION
         </div>
-
-        <div class="about-point" style="border-top:1px solid rgba(255, 255, 255, 0.5); padding-top:18px">
-          <h3 style="color:white; font-size:16px; margin-bottom:10px">Our Mission</h3>
-          <p style="color:rgba(255, 255, 255, 0.8); font-size:12px; line-height:1.8">
-            To educate, connect, and empower students through
-            meaningful learning experiences.
-          </p>
+        <div class="event-body">
+          <span class="event-tag">01 / FnA ↗</span>
+          <h3>Finance & Administration</h3>
         </div>
+      </article>
 
-      </div>
+      <article class="event-card reveal">
+        <div class="event-image">
+          HUMAN<br>CAPITAL
+        </div>
+        <div class="event-body">
+          <span class="event-tag">02 / HC ↗</span>
+          <h3>Human Capital</h3>
+        </div>
+      </article>
+
+      <article class="event-card reveal">
+        <div class="event-image">
+          PUBLIC<br>RELATIONS
+        </div>
+        <div class="event-body">
+          <span class="event-tag">03 / PR ↗</span>
+          <h3>Public Relations</h3>
+        </div>
+      </article>
+
+      <article class="event-card reveal">
+        <div class="event-image">
+          OPERATION &<br>EDUCATION
+        </div>
+        <div class="event-body">
+          <span class="event-tag">04 / O&amp;E ↗</span>
+          <h3>Operation & Education</h3>
+        </div>
+      </article>
+
+      <article class="event-card reveal">
+        <div class="event-image">
+          RESEARCH &<br>DEVELOPMENT
+        </div>
+        <div class="event-body">
+          <span class="event-tag">05 / R&amp;D ↗</span>
+          <h3>Research & Development</h3>
+        </div>
+      </article>
+
+      <article class="event-card reveal">
+        <div class="event-image">
+          CREATIVE<br>MARKETING
+        </div>
+        <div class="event-body">
+          <span class="event-tag">06 / CM ↗</span>
+          <h3>Creative Marketing</h3>
+        </div>
+      </article>
 
     </div>
-
-    <div class="about-visual reveal" style="align-items:center; background:linear-gradient(135deg, rgba(59, 0, 0, 0.5), rgba(193, 18, 31, 0.4)), repeating-linear-gradient(135deg, #c1121f 0, #c1121f 2px, #780000 2px, #780000 30px); border:1px solid rgba(255, 255, 255, 0.35); display:flex; justify-content:center; min-height:370px; padding:30px; position:relative; opacity:0; transform:translatey(30px); transition:opacity 0.8s ease, transform 0.8s ease">
-
-      <div class="about-logo" style="background:white; border-radius:50%; height:190px; padding:15px; width:190px" height="190" width="190">
-        <img src="assets/logo-kspm.png" alt="KSPM Logo" style="display:block; max-width:100%; height:100%; object-fit:contain; width:100%" height="100%" width="100%">
-      </div>
-
-      <div class="about-caption" style="bottom:22px; color:white; font-size:10px; font-weight:800; letter-spacing:3px; position:absolute">
-        LEARN · CONNECT · GROW
-      </div>
-
-    </div>
-
   </div>
-
 </section>
 
-<!-- =================================
-     PROGRAMS
-================================= -->
-<section id="programs" class="programs section-padding" style="padding:105px 0; color:white; position:relative">
+<!-- 05 / BE PART OF US (CTA) -->
+<section class="cta">
+  <div class="container reveal">
 
-  <div class="container" style="margin:auto; width:min(1100px, 90%)" width="min(1100px, 90%)">
+    <p class="eyebrow">05 / BE PART OF US</p>
 
-    <div class="reveal" style="opacity:0; transform:translatey(30px); transition:opacity 0.8s ease, transform 0.8s ease">
-
-      <div class="eyebrow" style="font-size:11px; font-weight:800; letter-spacing:3px; margin-bottom:20px; text-transform:uppercase">
-        What We Do
-      </div>
-
-      <h2 class="section-title" style="font-size:clamp(40px, 5vw, 65px); line-height:1.12; margin-bottom:22px; color:white">
-        Our Programs.
-      </h2>
-
-      <p class="section-description" style="font-size:14px; line-height:1.95; max-width:650px; color:rgba(255, 255, 255, 0.82)">
-        A variety of activities designed to help students understand
-        capital markets, develop their skills, and build connections.
-      </p>
-
-    </div>
-
-    <div class="program-grid" style="display:grid; gap:20px; grid-template-columns:repeat(3, 1fr); margin-top:45px">
-
-      <article class="program-card reveal" style="background:rgba(255, 255, 255, 0.045); border:1px solid rgba(255, 255, 255, 0.35); min-height:230px; padding:30px 25px; transition:opacity 0.8s ease, transform 0.8s ease; opacity:0; transform:translatey(30px)">
-        <div class="program-number" style="font-size:42px; margin-bottom:18px; opacity:0.8">01</div>
-        <h3 style="color:white; font-size:20px; margin-bottom:13px">Capital Market Education</h3>
-        <p style="color:rgba(255, 255, 255, 0.8); font-size:13px; line-height:1.85">
-          Learning sessions and educational activities to introduce
-          students to investment and capital market fundamentals.
-        </p>
-      </article>
-
-      <article class="program-card reveal" style="background:rgba(255, 255, 255, 0.045); border:1px solid rgba(255, 255, 255, 0.35); min-height:230px; padding:30px 25px; transition:opacity 0.8s ease, transform 0.8s ease; opacity:0; transform:translatey(30px)">
-        <div class="program-number" style="font-size:42px; margin-bottom:18px; opacity:0.8">02</div>
-        <h3 style="color:white; font-size:20px; margin-bottom:13px">Investment Discussion</h3>
-        <p style="color:rgba(255, 255, 255, 0.8); font-size:13px; line-height:1.85">
-          A collaborative space to discuss financial markets,
-          investment insights, and current economic developments.
-        </p>
-      </article>
-
-      <article class="program-card reveal" style="background:rgba(255, 255, 255, 0.045); border:1px solid rgba(255, 255, 255, 0.35); min-height:230px; padding:30px 25px; transition:opacity 0.8s ease, transform 0.8s ease; opacity:0; transform:translatey(30px)">
-        <div class="program-number" style="font-size:42px; margin-bottom:18px; opacity:0.8">03</div>
-        <h3 style="color:white; font-size:20px; margin-bottom:13px">Workshops &amp; Training</h3>
-        <p style="color:rgba(255, 255, 255, 0.8); font-size:13px; line-height:1.85">
-          Opportunities to improve analytical, communication,
-          and professional skills.
-        </p>
-      </article>
-
-      <article class="program-card reveal" style="background:rgba(255, 255, 255, 0.045); border:1px solid rgba(255, 255, 255, 0.35); min-height:230px; padding:30px 25px; transition:opacity 0.8s ease, transform 0.8s ease; opacity:0; transform:translatey(30px)">
-        <div class="program-number" style="font-size:42px; margin-bottom:18px; opacity:0.8">04</div>
-        <h3 style="color:white; font-size:20px; margin-bottom:13px">Company Visit</h3>
-        <p style="color:rgba(255, 255, 255, 0.8); font-size:13px; line-height:1.85">
-          Exploring the professional environment and gaining
-          insights from industry practitioners.
-        </p>
-      </article>
-
-      <article class="program-card reveal" style="background:rgba(255, 255, 255, 0.045); border:1px solid rgba(255, 255, 255, 0.35); min-height:230px; padding:30px 25px; transition:opacity 0.8s ease, transform 0.8s ease; opacity:0; transform:translatey(30px)">
-        <div class="program-number" style="font-size:42px; margin-bottom:18px; opacity:0.8">05</div>
-        <h3 style="color:white; font-size:20px; margin-bottom:13px">Community Development</h3>
-        <p style="color:rgba(255, 255, 255, 0.8); font-size:13px; line-height:1.85">
-          Building teamwork, leadership, and meaningful connections
-          among members.
-        </p>
-      </article>
-
-      <article class="program-card reveal" style="background:rgba(255, 255, 255, 0.045); border:1px solid rgba(255, 255, 255, 0.35); min-height:230px; padding:30px 25px; transition:opacity 0.8s ease, transform 0.8s ease; opacity:0; transform:translatey(30px)">
-        <div class="program-number" style="font-size:42px; margin-bottom:18px; opacity:0.8">06</div>
-        <h3 style="color:white; font-size:20px; margin-bottom:13px">Financial Literacy</h3>
-        <p style="color:rgba(255, 255, 255, 0.8); font-size:13px; line-height:1.85">
-          Encouraging responsible financial habits and better
-          understanding of personal finance.
-        </p>
-      </article>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- =================================
-     DEPARTMENTS
-================================= -->
-<section id="departments" class="departments section-padding" style="padding:105px 0">
-
-  <div class="container" style="margin:auto; width:min(1100px, 90%)" width="min(1100px, 90%)">
-
-    <div class="reveal" style="opacity:0; transform:translatey(30px); transition:opacity 0.8s ease, transform 0.8s ease">
-
-      <div class="eyebrow" style="font-size:11px; font-weight:800; letter-spacing:3px; margin-bottom:20px; text-transform:uppercase">
-        Our Organization
-      </div>
-
-      <h2 class="section-title" style="font-size:clamp(40px, 5vw, 65px); line-height:1.12; margin-bottom:22px">
-        Meet Our Departments.
-      </h2>
-
-      <p class="section-description" style="font-size:14px; line-height:1.95; max-width:650px; color:#555">
-        Every department plays an important role in supporting
-        our community and creating meaningful experiences.
-      </p>
-
-    </div>
-
-    <div class="department-grid" style="display:grid; gap:20px; grid-template-columns:repeat(3, 1fr); margin-top:45px">
-
-      <article class="department-card reveal" style="color:white; min-height:210px; padding:30px 25px; transition:opacity 0.8s ease, transform 0.8s ease; opacity:0; transform:translatey(30px)">
-        <div class="department-number" style="font-size:10px; font-weight:800; letter-spacing:2px; margin-bottom:22px">DEPARTMENT 01</div>
-        <h3 style="color:white; font-size:22px; margin-bottom:12px">Education</h3>
-        <p style="color:rgba(255, 255, 255, 0.85); font-size:12px; line-height:1.8">
-          Focuses on developing knowledge and understanding
-          of capital markets and investment.
-        </p>
-      </article>
-
-      <article class="department-card reveal" style="color:white; min-height:210px; padding:30px 25px; transition:opacity 0.8s ease, transform 0.8s ease; opacity:0; transform:translatey(30px)">
-        <div class="department-number" style="font-size:10px; font-weight:800; letter-spacing:2px; margin-bottom:22px">DEPARTMENT 02</div>
-        <h3 style="color:white; font-size:22px; margin-bottom:12px">Research &amp; Development</h3>
-        <p style="color:rgba(255, 255, 255, 0.85); font-size:12px; line-height:1.8">
-          Supports research, analysis, and the development
-          of financial market insights.
-        </p>
-      </article>
-
-      <article class="department-card reveal" style="color:white; min-height:210px; padding:30px 25px; transition:opacity 0.8s ease, transform 0.8s ease; opacity:0; transform:translatey(30px)">
-        <div class="department-number" style="font-size:10px; font-weight:800; letter-spacing:2px; margin-bottom:22px">DEPARTMENT 03</div>
-        <h3 style="color:white; font-size:22px; margin-bottom:12px">Public Relations</h3>
-        <p style="color:rgba(255, 255, 255, 0.85); font-size:12px; line-height:1.8">
-          Builds relationships and maintains communication
-          with internal and external parties.
-        </p>
-      </article>
-
-      <article class="department-card reveal" style="color:white; min-height:210px; padding:30px 25px; transition:opacity 0.8s ease, transform 0.8s ease; opacity:0; transform:translatey(30px)">
-        <div class="department-number" style="font-size:10px; font-weight:800; letter-spacing:2px; margin-bottom:22px">DEPARTMENT 04</div>
-        <h3 style="color:white; font-size:22px; margin-bottom:12px">Media &amp; Communication</h3>
-        <p style="color:rgba(255, 255, 255, 0.85); font-size:12px; line-height:1.8">
-          Creates information, publications, and creative
-          content for the community.
-        </p>
-      </article>
-
-      <article class="department-card reveal" style="color:white; min-height:210px; padding:30px 25px; transition:opacity 0.8s ease, transform 0.8s ease; opacity:0; transform:translatey(30px)">
-        <div class="department-number" style="font-size:10px; font-weight:800; letter-spacing:2px; margin-bottom:22px">DEPARTMENT 05</div>
-        <h3 style="color:white; font-size:22px; margin-bottom:12px">Human Resources</h3>
-        <p style="color:rgba(255, 255, 255, 0.85); font-size:12px; line-height:1.8">
-          Supports member development, teamwork,
-          and organizational growth.
-        </p>
-      </article>
-
-      <article class="department-card reveal" style="color:white; min-height:210px; padding:30px 25px; transition:opacity 0.8s ease, transform 0.8s ease; opacity:0; transform:translatey(30px)">
-        <div class="department-number" style="font-size:10px; font-weight:800; letter-spacing:2px; margin-bottom:22px">DEPARTMENT 06</div>
-        <h3 style="color:white; font-size:22px; margin-bottom:12px">Event &amp; Partnership</h3>
-        <p style="color:rgba(255, 255, 255, 0.85); font-size:12px; line-height:1.8">
-          Coordinates activities and supports collaborations
-          with partners and stakeholders.
-        </p>
-      </article>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- =================================
-     WEEKLY REPORT
-================================= -->
-<section id="weekly-report" class="weekly-report section-padding" style="padding:105px 0; text-align:center" align="center">
-
-  <div class="container report-content reveal" style="margin:auto; width:min(1100px, 90%); max-width:780px; opacity:0; transform:translatey(30px); transition:opacity 0.8s ease, transform 0.8s ease" width="min(1100px, 90%)">
-
-    <div class="report-icon" style="border-radius:50%; color:white; display:grid; font-size:38px; height:85px; margin:0 auto 30px; place-items:center; width:85px" height="85" width="85">▤</div>
-
-    <div class="eyebrow" style="font-size:11px; font-weight:800; letter-spacing:3px; margin-bottom:20px; text-transform:uppercase">
-      Stay Updated
-    </div>
-
-    <h2 class="section-title" style="font-size:clamp(40px, 5vw, 65px); line-height:1.12; margin-bottom:22px">
-      Weekly Report.
+    <h2>
+      Your Journey Starts Here.
     </h2>
 
-    <p class="section-description" style="font-size:14px; line-height:1.95; max-width:650px; color:#555; margin:0 auto 30px">
-      Stay informed with our weekly reports. Explore updates,
-      documentation, and various activities from KSPM FEB UPNVJ
-      through our report archive.
+    <p>
+      Be part of a community that learns, connects, and grows
+      together in the world of capital markets.
     </p>
 
-    <a class="btn btn-red" href="https://drive.google.com/drive/folders/1Lua2O4Lq48EbN9gtoRLa_PAhhC3CAfH4?usp=sharing" target="_blank" rel="noopener noreferrer" style="color:inherit; text-decoration:none; align-items:center; background:transparent; border:1px solid currentColor; border-radius:3px; cursor:pointer; display:inline-flex; font-size:12px; font-weight:800; justify-content:center; letter-spacing:0.5px; padding:15px 23px; transition:0.3s; margin-top:5px">
-      Explore Weekly Reports ↗
+    <a href="https://www.instagram.com/kspm.upnvj/"
+       target="_blank" rel="noopener"
+       class="btn btn-light">
+      Follow Our Journey ↗
     </a>
 
   </div>
-
 </section>
 
-<!-- =================================
-     CONTACT
-================================= -->
-<section id="contact" class="contact section-padding" style="padding:105px 0; color:white">
+<!-- 06 / GET IN TOUCH (CONTACT) -->
+<section class="contact section-padding" id="contact">
+  <div class="container">
 
-  <div class="container" style="margin:auto; width:min(1100px, 90%)" width="min(1100px, 90%)">
+    <p class="eyebrow" style="color:#780000">06 / GET IN TOUCH</p>
 
-    <div class="reveal" style="opacity:0; transform:translatey(30px); transition:opacity 0.8s ease, transform 0.8s ease">
+    <h2 class="section-title" style="color:#3b0000">
+      Let’s Connect.
+    </h2>
 
-      <div class="eyebrow" style="font-size:11px; font-weight:800; letter-spacing:3px; margin-bottom:20px; text-transform:uppercase">
-        Get in Touch
+    <p class="section-description" style="color:#555">
+      Have questions, partnership opportunities, or want to know
+      more about KSPM? We would love to hear from you.
+    </p>
+
+    <div class="contact-grid">
+
+      <div class="contact-info reveal">
+
+        <div class="contact-item">
+          <div class="contact-icon">◎</div>
+          <div>
+            <h4>Instagram</h4>
+            <a href="https://www.instagram.com/kspm.upnvj/" target="_blank" rel="noopener">
+              @kspm.upnvj ↗
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">💬</div>
+          <div>
+            <h4>WhatsApp Community</h4>
+            <a href="#" target="_blank" rel="noopener">
+              Update link ↗
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">✉</div>
+          <div>
+            <h4>Email</h4>
+            <a href="mailto:pr.kspmupnvj@gmail.com">
+              Update email ↗
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">🤝</div>
+          <div>
+            <h4>Partnership</h4>
+            <a href="#contact">
+              Contact us ↗
+            </a>
+          </div>
+        </div>
+
       </div>
 
-      <h2 class="section-title" style="font-size:clamp(40px, 5vw, 65px); line-height:1.12; margin-bottom:22px; color:white">
-        Let's Connect.
-      </h2>
+      <div class="contact-panel reveal">
+        <h3>LEARN · CONNECT · GROW</h3>
 
-      <p class="section-description" style="font-size:14px; line-height:1.95; max-width:650px; color:rgba(255, 255, 255, 0.85)">
-        Have questions, ideas, or opportunities to collaborate?
-        We would love to hear from you.
-      </p>
-
-    </div>
-
-    <div class="contact-grid" style="display:grid; gap:55px; grid-template-columns:1fr 1fr; margin-top:40px">
-
-      <div class="reveal" style="opacity:0; transform:translatey(30px); transition:opacity 0.8s ease, transform 0.8s ease">
-
-        <div class="contact-item" style="border-bottom:1px solid rgba(255, 255, 255, 0.4); padding:20px 0">
-          <small style="display:block; font-size:10px; font-weight:800; letter-spacing:2px; margin-bottom:10px">ORGANIZATION</small>
-          <p style="color:white; font-size:14px; font-weight:600">KSPM FEB UPN "Veteran" Jakarta</p>
-        </div>
-
-        <div class="contact-item" style="border-bottom:1px solid rgba(255, 255, 255, 0.4); padding:20px 0">
-          <small style="display:block; font-size:10px; font-weight:800; letter-spacing:2px; margin-bottom:10px">INSTAGRAM</small>
-          <a href="https://www.instagram.com/kspm.upnvj/" target="_blank" rel="noopener noreferrer" style="color:white; text-decoration:none; font-size:14px; font-weight:600">
-            @kspm.upnvj ↗
-          </a>
-        </div>
-
-        <div class="contact-item" style="border-bottom:1px solid rgba(255, 255, 255, 0.4); padding:20px 0">
-          <small style="display:block; font-size:10px; font-weight:800; letter-spacing:2px; margin-bottom:10px">LINKEDIN</small>
-          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" style="color:white; text-decoration:none; font-size:14px; font-weight:600">
-            Visit LinkedIn ↗
-          </a>
-        </div>
-
-      </div>
-
-      <div class="contact-box reveal" style="border:1px solid rgba(255, 255, 255, 0.25); padding:38px; opacity:0; transform:translatey(30px); transition:opacity 0.8s ease, transform 0.8s ease">
-
-        <h3 style="color:white; font-size:30px; margin-bottom:17px">Be Part of Our Community.</h3>
-
-        <p style="color:rgba(255, 255, 255, 0.8); font-size:13px; line-height:1.9; margin-bottom:25px">
-          Learn about the capital market, connect with new people,
-          and grow together with KSPM FEB UPNVJ.
+        <p>
+          Explore the capital market, develop financial knowledge,
+          and create opportunities for future leaders together with
+          KSPM FEB UPN “Veteran” Jakarta.
         </p>
 
-        <a href="https://www.instagram.com/kspm.upnvj/" target="_blank" rel="noopener noreferrer" class="btn btn-light" style="color:inherit; text-decoration:none; align-items:center; background:transparent; border:1px solid currentColor; border-radius:3px; cursor:pointer; display:inline-flex; font-size:12px; font-weight:800; justify-content:center; letter-spacing:0.5px; padding:15px 23px; transition:0.3s">
-          Get to Know Us ↗
+        <a href="https://www.instagram.com/kspm.upnvj/"
+           target="_blank" rel="noopener"
+           class="btn btn-light">
+          Follow Our Journey ↗
         </a>
-
       </div>
 
     </div>
-
-    <div class="footer" style="align-items:center; border-top:1px solid rgba(255, 255, 255, 0.3); color:rgba(255, 255, 255, 0.75); display:flex; flex-wrap:wrap; font-size:10px; gap:20px; justify-content:space-between; letter-spacing:1px; margin-top:70px; padding-top:25px">
-
-      <div>
-        © <span id="year">2026</span> KSPM FEB UPNVJ
-        · CAPITAL MARKET COMMUNITY
-      </div>
-
-      <div class="footer-social" style="display:flex; gap:20px">
-
-        <a href="https://www.instagram.com/kspm.upnvj/" target="_blank" rel="noopener noreferrer" style="color:white; text-decoration:none; font-weight:700">
-          INSTAGRAM ↗
-        </a>
-
-        <a href="#home" style="color:white; text-decoration:none; font-weight:700">
-          BACK TO TOP ↑
-        </a>
-
-      </div>
-
-    </div>
-
   </div>
-
 </section>
 
 </main>
 
-<!-- =================================
-     JAVASCRIPT
-================================= -->
+<!-- FOOTER -->
+<footer>
+  <div class="container footer-content">
+
+    <div class="footer-brand">
+      <img src="assets/logo-kspm.png" alt="KSPM Logo">
+
+      <div>
+        <strong>KSPM FEB UPNVJ</strong>
+        <p>LEARN · CONNECT · GROW</p>
+      </div>
+    </div>
+
+    <div class="footer-social">
+      <a href="https://www.instagram.com/kspm.upnvj/"
+         target="_blank" rel="noopener">@KSPM.UPNVJ ↗</a>
+      <a href="#home">BACK TO TOP ↑</a>
+    </div>
+
+    <p class="footer-copy">
+      © 2026 KSPM FEB UPN “Veteran” Jakarta
+    </p>
+
+  </div>
+</footer>
+
 <script>
-
 /* MOBILE NAVIGATION */
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
 
-const menuToggle = document.getElementById("menuToggle");
-const navLinks = document.getElementById("navLinks");
-
-menuToggle.addEventListener("click", function() {
-
-  navLinks.classList.toggle("show");
-
-  const isOpen = navLinks.classList.contains("show");
-
-  menuToggle.textContent = isOpen ? "✕" : "☰";
-  menuToggle.setAttribute("aria-expanded", isOpen);
-
+menuToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('show');
+  menuToggle.textContent =
+    navLinks.classList.contains('show') ? '✕' : '☰';
 });
 
-/* CLOSE MOBILE MENU AFTER CLICK */
-
-document.querySelectorAll(".nav-links a").forEach(link => {
-
-  link.addEventListener("click", function() {
-
-    navLinks.classList.remove("show");
-    menuToggle.textContent = "☰";
-    menuToggle.setAttribute("aria-expanded", "false");
-
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('show');
+    menuToggle.textContent = '☰';
   });
-
 });
 
-/* SCROLL REVEAL ANIMATION */
-
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-
-    entries.forEach(entry => {
-
-      if (entry.isIntersecting) {
-
-        entry.target.classList.add("active");
-
-        revealObserver.unobserve(entry.target);
-
-      }
-
-    });
-
-  },
-  {
-    threshold: 0.12
-  }
-);
-
-document.querySelectorAll(".reveal").forEach(element => {
-
-  revealObserver.observe(element);
-
+/* SCROLL ANIMATION */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+    }
+  });
+}, {
+  threshold: 0.12
 });
 
-/* NAVIGATION ACTIVE STATE */
-
-const sections = document.querySelectorAll("main section[id]");
-const navItems = document.querySelectorAll(".nav-links a");
-
-const sectionObserver = new IntersectionObserver(
-  (entries) => {
-
-    entries.forEach(entry => {
-
-      if (entry.isIntersecting) {
-
-        navItems.forEach(link => {
-
-          link.classList.toggle(
-            "active",
-            link.getAttribute("href") === "#" + entry.target.id
-          );
-
-        });
-
-      }
-
-    });
-
-  },
-  {
-    rootMargin: "-35% 0px -55% 0px"
-  }
-);
-
-sections.forEach(section => {
-
-  sectionObserver.observe(section);
-
+document.querySelectorAll('.reveal').forEach(element => {
+  observer.observe(element);
 });
-
-/* AUTOMATIC COPYRIGHT YEAR */
-
-document.getElementById("year").textContent =
-  new Date().getFullYear();
-
 </script>
 
 </body>
